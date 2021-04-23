@@ -1,0 +1,14 @@
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Global Css
+@import "front/style";
+@import "front/responsive";
+
+// Layout
+@import 'front/layout/dash-sidebar';
+
+// Pages
+@import "front/pages/account";
+@import "front/pages/cart";
+@import "front/pages/checkout";

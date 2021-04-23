@@ -1,0 +1,22 @@
+/* sidebar css starts */
+.side-wrap{
+    background: #f4f4f4;
+}
+.side-wrap .side-wrap-item{
+
+}
+.side-wrap-item .side-wrap-link{
+    display: block;
+    padding: 7px 0 7px 20px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    border: 1px solid #eee;
+    line-height: 1.4;
+    transition: all 0.3s ease-in-out;
+}
+.side-wrap-item .side-wrap-link:hover{
+    padding-left: 25px;
+    color: #e7487f;
+}
+/* sidebar css ends */

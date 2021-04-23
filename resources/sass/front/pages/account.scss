@@ -1,0 +1,220 @@
+/* account page css starts */
+.account-sec-2{
+  padding: 80px 0px;
+  background: #fff;
+}
+.account-form-wrap{
+  background: #f4f4f4;
+  padding: 30px 50px 50px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 2px solid #e4e9ef;
+}
+.account-form-wrap .account-heading{
+  font-size: 24px;
+  line-height: 1.2;
+  color: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.account-form-wrap .account-form-body{
+
+}
+.acc-field-wrap{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+.acc-field-wrap label{
+  display: block;
+  width: 100%;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 7px;
+}
+.acc-field-wrap label span{
+  color: #ff0000;
+}
+.acc-field-wrap input{
+  width: 100%;
+  font-size: 16px;
+  color: #000;
+  height: 38px;
+  padding: 0px 10px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  /* box-shadow: 0 0 6px rgba(2,3,3,.1); */
+}
+.acc-check-wrap{
+
+}
+.acc-check-wrap input{
+  margin-right: 5px;
+}
+.acc-check-wrap label{
+  font-size: 16px;
+  color: #000;
+}
+.acc-btn-wrap{
+  margin-top: 30px;
+}
+.acc-btn-wrap button{
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.5;
+  background: #e7487f;
+  display: inline-block;
+  border: none;
+  padding: 10px;
+  max-width: 230px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.acc-btn-wrap button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  height: 0;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+.acc-btn-wrap button:hover::before {
+  height: 100%;
+}
+.account-form-body .forgot-pass{
+  display: inline-block;
+  margin-top: 10px;
+  color: #000;
+  font-size: 18px;
+}
+/* account page css ends */
+
+/* dashboard css starts */
+.dash-sec-1{
+    padding: 70px 0;
+}
+.dashboard-right-wrapper{
+
+}
+.dashboard-right-wrapper .dash-text{
+    font-family: 'Lato', sans-serif;
+    color: #000;
+    font-size: 14px;
+}
+.dash-text a{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    transition: all 0.1s ease-in-out;
+}
+.dash-text a:hover{
+    text-decoration: underline;
+    color: #e7487f;
+}
+/* edit account page css start*/
+.dashboard-right-wrapper{
+
+}
+.dash-main-heading{
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+.dash-subheading{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2;
+}
+.edit-account-form-wrap{
+
+}
+.edit-account-form-wrap .single-field{
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+.single-field label{
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+}
+.single-field input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #000;
+}
+.btn-continue{
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.5;
+    background: #000;
+    display: inline-block;
+    border: none;
+    padding: 10px;
+    max-width: 230px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-continue::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #e7487f;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+.btn-continue:hover::before {
+  width: 100%;
+}
+/* edit account page css end */
+/* address page css starts */
+.show-address-single{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 5px 0;
+}
+.show-address-single p{
+  color: #000;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+.show-address-single .sas-actions{
+}
+.sas-actions button{
+  padding: 5px 25px;
+}
+/* address page css ends */
+/* dashboard css ends */
