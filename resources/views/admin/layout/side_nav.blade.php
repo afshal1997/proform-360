@@ -38,11 +38,21 @@
                     <ul class="nav side-menu">
                         <li><a><i class="fa fa-clone"></i> CMS <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                @if(in_array('viewPage',\Request::get('permission')))
-                                    <li><a href="{{ route('page') }}">Pages</a>
-                                @endif
-                                @if(in_array('updateHome',\Request::get('permission')))
-                                    <li><a href="{{ route('home.index') }}">Home</a>
+                                <li class=""><a>Home Page<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none;">
+                                        @if(in_array('updateHome',\Request::get('permission')))
+                                            <li><a href="{{ route('home.index') }}">Home</a>
+                                        @endif
+                                        @if(in_array('viewHomecard',\Request::get('permission')))
+                                            <li><a href="{{ route('homecard.list') }}">Home Cards</a>
+                                        @endif
+                                    </ul>
+                                </li>
+                                
+                                
+
+                                @if(in_array('viewPricing',\Request::get('permission')))
+                                    <li><a href="{{ route('pricing.list') }}">Pricing</a>
                                 @endif
                             </ul>
                         </li>
@@ -58,7 +68,7 @@
                         <li><a><i class="fa fa-phone"></i> Contacts <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 @if(in_array('viewContact',\Request::get('permission')))
-                                    <li><a href="javascript:void(0)">Contacts</a></li>
+                                    <li><a href="{{ route('contact.list') }}">Contacts</a></li>
                                 @endif
                             </ul>
                         </li>

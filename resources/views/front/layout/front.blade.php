@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Proform-360 | @yield('title','Home')</title>
+    <title> Proform-360 | @yield('title','')</title>
     @include('front.layout.css')
     @yield('pageCss')
 </head>
@@ -19,8 +19,7 @@
             <div class="row">
                 <div class="col-12 col-lg-3 mb-4 mb-md-0 text-center-sm">
                     <div class="footer-logo">
-                        <a href="{{ route('home') }}"><img
-                                src="{{ asset('assets/front/images/logo/footer-logo.png') }}"></a>
+                        <a href="{{ route('home') }}"><img src="{{ asset($setting->footerlogo) }}"></a>
                     </div>
                 </div>
                 <div class="col-0 col-md-0 col-lg-0 mb-4">
@@ -37,14 +36,14 @@
                         <ul>
                             <li>
                                 <span class="text">
-                                    Mon-Fri 08:00am - 6:00pm<br>
-                                    112W 34th St,
+                                    {!! $setting->headline ?? '' !!}<br>
+                                    {!! $setting->address ?? '' !!}
                                 </span>
                             </li>
                             <li>
-                                <a href="tel:503-746-3142">
+                                <a href="tel:{{ $setting->phone }}">
                                     <span class="icon fa fa-phone"></span>
-                                    <span class="text">503-746-3142</span>
+                                    <span class="text">{{ $setting->phone }}</span>
                                 </a>
                             </li>
                             <li>
@@ -79,21 +78,26 @@
                     <div class="float-right text-white list-style" style="position:absolute;bottom:0">
                         <ul>
                             <li>
-                                <a href="javascript:void(0)">
+                                <a href="{{ $setting->facebook }}">
                                     <i class="fa fa-facebook mr-4 text-white"></i>
                                 </a>
-                                <a href="javascript:void(0)">
+                                
+                                <a href="{{ $setting->linkedin }}">
                                     <i class="fa fa-linkedin mr-4 text-white"></i>
                                 </a>
-                                <a href="javascript:void(0)">
+                                
+                                <a href="{{ $setting->pinterest }}">
                                     <i class="fa fa-pinterest-p mr-4 text-white"></i>
                                 </a>
-                                <a href="javascript:void(0)">
+                                
+                                <a href="{{ $setting->twitter }}">
                                     <i class="fa fa-twitter mr-4 text-white"></i>
                                 </a>
-                                <a href="javascript:void(0)">
+                                
+                                <a href="{{ $setting->instagram }}">
                                     <i class="fa fa-instagram mr-4 text-white"></i>
                                 </a>
+                                
                             </li>
                         </ul>
                     </div>

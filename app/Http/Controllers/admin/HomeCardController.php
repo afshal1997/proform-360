@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Homecard;
+use App\Models\Home;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use File;
@@ -18,16 +19,19 @@ class HomeCardController extends Controller
         $content['title'] = ucwords(str_replace('-',' ',request()->segment(2)));
         if (request()->ajax()) {
             return datatables()->of(Homecard::latest()->get())
-                ->addColumn('checkbox',function($data){
+                ->addColumn('icon', function ($data) {
+                    return '<img width="65" src="' . asset(!empty($data->icon) ? $data->icon : 'assets/admin/images/placeholder.png') . '">';
+                })->addColumn('checkbox',function($data){
                     return '<input type="checkbox" class="delete_checkbox flat" value="'.$data->id.'">';
                 })->addColumn('action',function($data){
                     return '<a title="Edit" href="'.request()->segment(2).'/form/edit/'.$data->id.'" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>&nbsp;<a title="Duplicate" href="'.request()->segment(2).'/form/duplicate/'.$data->id.'" class="btn btn-success btn-sm"><i class="fa fa-square-o"></i></a>&nbsp;<button title="View" type="button" name="view" id="'.$data->id.'" class="view btn btn-info btn-sm"><i class="fa fa-eye"></i></button>&nbsp;<button title="Delete" type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>';
-                })->rawColumns(['checkbox','action'])->make(true);
+                })->rawColumns(['checkbox','action','icon'])->make(true);
         }
         return view('admin.'.request()->segment(2).'.list')->with($content);
     }
 
     public function form(Request $request, $form_choice = "",$id="")
+    
     {
         if (!in_array('createHomecard',\Request::get('permission'))) {
             return redirect('admin');
@@ -40,6 +44,14 @@ class HomeCardController extends Controller
             $record = ($form_choice == 'edit') ? Homecard::findOrFail($id) : new Homecard ;
             foreach ($request->input() as $key => $value) {
                 $record->$key = $value;
+            }
+            if (!empty($request->file('icon'))) {
+                $image_path = Home::where('id',1)->first()->icon;
+                if (File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+                $image = single_image($request->file('icon'),request()->segment(2));
+                $record->icon = $image;
             }
             $record->status = '1';
             $record->created_by = \Auth::user()->id;

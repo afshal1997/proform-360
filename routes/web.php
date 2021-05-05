@@ -48,6 +48,12 @@ Route::middleware(['admin'])->prefix('admin')->namespace('admin')->group(static 
     Route::get('/role/view/{id}', 'RoleController@view');
     Route::delete('/role/destroy/{id}', 'RoleController@destroy');
     Route::post('/role/delete_all', 'RoleController@delete_all')->name('role.delete_all');
+    
+    // Contact
+    Route::get('/contact', 'ContactController@index')->name('contact.list');
+    Route::get('/contact/view/{id}', 'ContactController@view');
+    Route::delete('/contact/destroy/{id}', 'ContactController@destroy');
+    Route::post('/contact/delete_all', 'ContactController@delete_all')->name('contact.delete_all');
 
     // Pricing
     Route::get('/pricing', 'PricingController@index')->name('pricing.list');
@@ -70,6 +76,7 @@ Route::middleware(['admin'])->prefix('admin')->namespace('admin')->group(static 
 Route::namespace('Front')->group(static function () {
     //    Page
     Route::get('/', 'HomeController@index')->name('home');
+    Route::post('contactform', 'HomeController@contactForm')->name('contactform');
     Route::view('/contact-us', 'front.contact-us')->name('contact');
     Route::view('/feature', 'front.features')->name('feature');
     Route::get('/pricing', 'PricingController@index')->name('pricing');

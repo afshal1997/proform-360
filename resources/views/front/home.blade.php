@@ -1,6 +1,13 @@
 @extends('front.layout.front')
 @section('title', 'Home')
 @section('content')
+<style>
+@media only screen and (max-width: 1024px){
+    .main-header-video iframe{
+        width:100% !important;
+    }
+}
+</style>
     <section>
         <div class="slider-row">
             <div class="slider" style="background-image: url('{{$home->banner}}')">
@@ -9,6 +16,11 @@
                         <div class="col-lg-6 mt-5 pt-5">
                             <div class="main-header-heading">
                                 {!! $home->banner_text ?? '' !!}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 m-auto">
+                            <div class="main-header-video">
+                               <iframe src="https://player.vimeo.com/video/301696749" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
                             </div>
                         </div>
                     </div>
@@ -42,22 +54,36 @@
                 </div>
             </div>
             <div class="row mt-5">
-                @forelse($homecards as $homecard)
-                <div class="col-lg-4">
+ 
+            
+                @for($i = 0; $i<=3; $i++)
+                <div class="col-lg-3">
                     <div class="card platform">
                         <div class="card-body">
-                            <h3>{!! $homecard->icon ?? '' !!}</h3>
-                            <h2>{{ $homecard->heading ?? '' }}</h2>
-                            {!! $homecard->text ?? '' !!}
+                            <img class="w-100" src="{{ $homecards[$i]->icon }}" alt="">
+                            <h2>{{ $homecards[$i]->heading ?? '' }}</h2>
+                            {!! $homecards[$i]->text ?? '' !!}
                             <hr class="w-50 bg-light">
                         </div>
                     </div>
                 </div>
-                @empty
-                    <div class="col-md-12">
-                        <p>No Services Data found.</p>
+                @endfor
+            </div>
+            <div class="row">
+                <div class="col-lg-1 m-auto"></div>
+                @for($i = 4; $i<=6; $i++)
+                <div class="col-lg-3">
+                    <div class="card platform">
+                        <div class="card-body">
+                            <img class="w-100" src="{{ $homecards[$i]->icon }}" alt="">
+                            <h2>{{ $homecards[$i]->heading ?? '' }}</h2>
+                            {!! $homecards[$i]->text ?? '' !!}
+                            <hr class="w-50 bg-light">
+                        </div>
                     </div>
-                @endforelse
+                </div>
+                @endfor
+                <div class="col-lg-1 m-auto"></div>
             </div>
         </div>
     </section>

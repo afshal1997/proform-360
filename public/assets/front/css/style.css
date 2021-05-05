@@ -12097,12 +12097,11 @@ a:focus {
 }
 
 h1,
-h2,
+
 h3,
 h4,
 h5,
 .h1,
-.h2,
 .h3,
 .h4,
 .h5 {
@@ -15342,21 +15341,38 @@ a.feature {
 
 .platform {
     background: #3c3c3c;
-    color: #fff;
+    color: #fff !important;;
     text-align: center;
     transition: 1s;
     margin: 10px auto;
 }
-
+.card.platform .card-body {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.card.platform img {
+    max-width: 70px;
+}
+.platform h2{
+    color:#fff !important;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size:21px;
+}
 .platform h1,
 .platform h3 {
-    color: #fff;
+    color: #fff !important;
     transition: 1s;
 }
 
 .platform p {
     height: 100%;
-    min-height: 100px;
+    min-height: 150px;
+    margin: 20px auto 0;
+    
+}
+.platform p span,.platform div font  {
+   color:#fff !important;
 }
 
 .platform hr {
@@ -15367,7 +15383,7 @@ a.feature {
 
 .platform:hover h3,
 .platform:hover i {
-    color: #fe8e1e;
+    color: #fe8e1e !important;
     transition: 1s;
 }
 

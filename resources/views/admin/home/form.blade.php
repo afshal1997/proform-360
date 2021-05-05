@@ -76,7 +76,7 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="section_paragraph2">Section Paragraph 2 <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input id="section_paragraph2" class="form-control" name="section_paragraph2" value="{{ !empty($record->section_paragraph2)?$record->section_paragraph2:'' }}" placeholder="Section Paragraph 2" required="required" autofocus type="text">
+                                        <input id="section_paragraph2" class="form-control editor" name="section_paragraph2" value="{{ !empty($record->section_paragraph2)?$record->section_paragraph2:'' }}" placeholder="Section Paragraph 2" required="required" autofocus type="text">
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -90,7 +90,7 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="section_paragraph3">Section Paragraph 3 <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input id="section_paragraph3" class="form-control" name="section_paragraph3" value="{{ !empty($record->section_paragraph3)?$record->section_paragraph3:'' }}" placeholder="Section Paragraph 3" required="required" autofocus type="text">
+                                        <input id="section_paragraph3" class="form-control editor" name="section_paragraph3" value="{{ !empty($record->section_paragraph3)?$record->section_paragraph3:'' }}" placeholder="Section Paragraph 3" required="required" autofocus type="text">
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -104,7 +104,7 @@
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="section_paragraph4">Section Paragraph 4 <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6">
-                                        <input id="section_paragraph4" class="form-control" name="section_paragraph4" value="{{ !empty($record->section_paragraph4)?$record->section_paragraph4:'' }}" placeholder="Section Paragraph 4" required="required" autofocus type="text">
+                                        <input id="section_paragraph4" class="form-control editor" name="section_paragraph4" value="{{ !empty($record->section_paragraph4)?$record->section_paragraph4:'' }}" placeholder="Section Paragraph 4" required="required" autofocus type="text">
                                     </div>
                                 </div>
                                 <div class="item form-group">

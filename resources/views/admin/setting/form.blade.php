@@ -116,6 +116,24 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <div class="item form-group">
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="logo">Footer Logo <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group-btn">
+                                            <div class="image-upload">
+                                                <img src="{{asset(!empty($record->footerlogo)?$record->footerlogo:'')}}" class="img-responsive">
+                                                <div class="file-btn">
+                                                    <input type="file" id="footerlogo" name="footerlogo" accept=".jpg,.png">
+                                                    <input type="text" id="footerlogo" name="footerlogo" value="{{ !empty($record->footerlogo) ? $record->footerlogo : '' }}" hidden="">
+                                                    <label class="btn btn-info">Upload</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="item form-group">
                                     <label class="col-form-label col-md-3 col-sm-3 label-align" for="favico">Favico <span class="required">*</span>
                                     </label>

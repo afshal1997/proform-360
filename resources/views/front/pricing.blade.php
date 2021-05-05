@@ -48,32 +48,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="contact-form">
                             <h3>Get In Touch</h3>
-                            <form action="#" method="post">
-                                <div class="row">
-                                    <div class="col-md-12 form-group">
-                                        <label for="name">Name</label>
-                                        <input type="text" id="name" class="form-control ">
-                                    </div>
-                                    <div class="col-md-12 form-group">
-                                        <label for="phone">Phone</label>
-                                        <input type="text" id="phone" class="form-control ">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12 form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" class="form-control ">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <input type="submit" value="Send Message"
-                                               class="btn btn-primary btn-get-a-quote px-3 py-2 mt-2">
-                                    </div>
-                                </div>
-                            </form>
+                            @include('front.components.form')
                         </div>
 
                     </div>

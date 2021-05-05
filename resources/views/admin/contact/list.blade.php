@@ -10,48 +10,6 @@
 
 @section('content')
 
-{{-- Banner Modal--}}
-<div class="modal fade" id="bannerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <form id="bannerImage" action="{{route("banner.create")}}">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-dark" id="exampleModalLongTitle">Banner Image</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <input type="file" class="custom-file-input" required name="banner_image" />
-                                <label class="custom-file-label">Select Banner Image</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="input-group-sm">
-                                <div class="input-group-prepend">
-                                    <p class="input-group-text">Type Website URL</p>
-                                </div>
-                                <input type="text" class="form-control" required name="banner_url" />
-
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary save">Save changes</button>
-            </div>
-
-        </div>
-        </form>
-    </div>
-</div>
-{{--End--}}
-
     <div class="right_col" role="main">
         <div class="">
             <div class="page-title">
@@ -87,13 +45,9 @@
                                             <thead>
                                             <tr>
                                                 <th>{{ucwords(str_replace('_',' ','id'))}}</th>
-                                                <th>{{ucwords(str_replace('_',' ','first_name'))}}</th>
-                                                <th>{{ucwords(str_replace('_',' ','last_name'))}}</th>
+                                                <th>{{ucwords(str_replace('_',' ','name'))}}</th>
                                                 <th>{{ucwords(str_replace('_',' ','email'))}}</th>
                                                 <th>{{ucwords(str_replace('_',' ','phone'))}}</th>
-                                                <th>{{ucwords(str_replace('_',' ','location'))}}</th>
-                                                <th>{{ucwords(str_replace('_',' ','date'))}}</th>
-                                                <th>{{ucwords(str_replace('_',' ','time'))}}</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
@@ -108,6 +62,44 @@
                 </div>
 
 
+            </div>
+        </div>
+    </div>
+    
+    <div id="viewModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #343a40;
+            color: #fff;">
+                    <h4 class="modal-title">View {{ucwords(str_replace('_',' ',request()->segment(2)))}}</h4>
+                    <button type="button" class="close" data-dismiss="modal" style="    color: #fff;">&times;</button>
+
+                </div>
+                <div class="modal-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <td id="name" align="center"></td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td id="email" align="center"></td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td id="phone" align="center"></td>
+                            </tr>
+                            <tr>
+                                <th>Message</th>
+                                <td id="message" align="center"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -166,46 +158,97 @@
                 serverSide: true,
                 pageLength: 10,
                 ajax: {
-                    url: `{{route('my_contacts')}}`,
+                    url: `{{route(request()->segment(2).'.list')}}`,
                 },
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'first_name', name: 'first_name'},
-                    {data: 'last_name', name: 'last_name'},
-                    {data: 'email', name: 'email'},
+                    {data: 'name', name: 'name'},
                     {data: 'phone', name: 'phone'},
-                    {data: 'meeting_location', name: 'meeting_location'},
-                    {data: 'date', name: 'date'},
-                    {data: 'time', name: 'time'},
+                    {data: 'email', name: 'email'},
                     {data: 'action', name: 'action', orderable: false}
                 ]
             });
 
+            // View Records
+            $(document, this).on('click', '.view', function () {
+                let id = $(this).attr('id');
+                $.ajax({
+                    url: `{{url('admin/'.request()->segment(2).'/view/')}}/${id}`,
+                    dataType: "json",
+                    success: function (data) {
+                        $("#name").html(data.name);
+                        $("#phone").html(data.phone);
+                        $("#email").html(data.email);
+                        $("#message").html(data.message);
+                        $("#viewModal").modal('show');
+                    }
+                })
+            })
+
             var delete_id;
-            $(document,this).on('click','.delete_contact',function(){
+            $(document, this).on('click', '.delete', function () {
                 delete_id = $(this).attr('id');
                 $('#confirmModal').modal('show');
             });
-            $(document).on('click','#ok_delete',function(){
+            $(document).on('click', '#ok_delete', function () {
                 $.ajax({
-                    type:"delete",
-                    url:`{{url('profile/contacts/destroy/')}}/${delete_id}`,
+                    type: "delete",
+                    url: `{{url('admin/'.request()->segment(2).'/destroy/')}}/${delete_id}`,
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
-                    beforeSend: function(){
+                    beforeSend: function () {
                         $('#ok_delete').text('Deleting...');
-                        $('#ok_delete').attr("disabled",true);
+                        $('#ok_delete').attr("disabled", true);
                     },
                     success: function (data) {
                         DataTable.ajax.reload();
                         $('#ok_delete').text('Delete');
-                        $('#ok_delete').attr("disabled",false);
+                        $('#ok_delete').attr("disabled", false);
                         $('#confirmModal').modal('hide');
-                        js_success("Contact Deleted Successfully.");
+                        js_success(data);
                     }
                 })
             });
+
+
+            // Selecting all Checkboxes
+            $(document).on("click", "#select_all", function () {
+                if (this.checked) {
+                    $(":checkbox").each(function () {
+                        this.checked = true;
+                    });
+                } else {
+                    $(':checkbox').each(function () {
+                        this.checked = false;
+                    })
+                }
+            });
+
+            //Delete Selected Records
+            $(document).on('click', '#delete_all', function () {
+                let checkbox = $('.delete_checkbox:checked');
+                if (checkbox.length > 0) {
+                    var checkbox_value = [];
+                    $(checkbox).each(function () {
+                        checkbox_value.push($(this).val());
+                    });
+                    $.ajax({
+                        url: `{{route(request()->segment(2).'.delete_all')}}`,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        data: {checkbox_value: checkbox_value},
+                        method: `post`,
+                        success: function (data) {
+                            DataTable.ajax.reload();
+                            js_success(data);
+                        }
+                    });
+                } else {
+                    js_error('Select atleast one record');
+                }
+            })
 
         })
     </script>

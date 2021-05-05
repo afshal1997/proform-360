@@ -36,16 +36,21 @@
 
                             <form class="form-horizontal form-label-left" method="POST" action="{{ $action }}" enctype="multipart/form-data" novalidate>
                                 @csrf
-
+                                
                                 <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="icon">Select Icon
-                                        <span class="required">*</span>
+                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="icon">Icon Image <span class="required">*</span>
                                     </label>
-                                    <div class="col-md-6 col-sm-6">
-                                        <select name="icon" id="icon"
-                                                class="form-control select2">
-                                            <option value="">Select {{ ucwords(str_replace('_',' ','icon')) }}</option>
-                                        </select>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="input-group-btn">
+                                            <div class="image-upload">
+                                                <img src="{{asset(!empty($record->icon)?$record->icon:'assets/admin/images/placeholder.png')}}" class="img-responsive">
+                                                <div class="file-btn">
+                                                    <input type="file" id="icon" name="icon" accept=".jpg,.png" {{ (request()->segment(4) === 'add')?'required':'' }}>
+                                                    <input type="text" id="icon" name="icon" value="{{ !empty($record->icon) ? $record->icon : '' }}" hidden="">
+                                                    <label class="btn btn-info">Upload</label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

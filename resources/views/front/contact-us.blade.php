@@ -19,37 +19,7 @@
         <div class="row">
           <div class="col-md-6 mb-5 contactbg" style="background:#eee">
               <h2>Get In Touch</h2>
-            <form action="#" method="post">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="name">Name</label>
-                  <input type="text" id="name" class="form-control ">
-                </div>
-                <div class="col-md-6 form-group">
-                  <label for="phone">Phone</label>
-                  <input type="text" id="phone" class="form-control ">
-                </div>
-              </div>
-             
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" class="form-control ">
-                </div>
-              </div>
-               <div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="message">Write Message</label>
-                  <textarea name="message" id="message" class="form-control " cols="2" rows="4"></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="submit" value="Send Message" class="btn btn-primary px-3 py-3">
-                </div>
-              </div>
-               
-            </form>
+            @include('front.components.form')
           </div>
           <div class="col-md-6 mb-5">
               <h2>Contact Information</h2>

@@ -23,14 +23,20 @@
 
     AOS.init();
 
-    const openModal = clickedButton => {
-        const mainHeadingElement = clickedButton.closest('div').querySelector('h3');
-        const bracketTextElement = mainHeadingElement.nextElementSibling;
-        const heading = `${mainHeadingElement.innerText} ( ${bracketTextElement.innerText} )`;
-
-        document.querySelector('#exampleModalCenter1').querySelector('h5[class="modal-title text-white"]').innerText = heading;
-        $('#exampleModalCenter1').modal('show');
-    };
+    const contactForm = document.querySelector('#contactForm');
+    contactForm.addEventListener('submit',e => {
+        e.preventDefault();
+        fetch(`{{route('contactform')}}`,{
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="token"]').getAttribute('content')
+            },
+            body: new FormData(contactForm)
+        }).then(r => r.json()).then(data => {
+            contactForm.reset();
+            js_success(data.msg)
+        }).catch(e => console.log(error));
+    })
 
     const submitPackageForm = (evt, packageForm) => {
         evt.preventDefault();
@@ -54,6 +60,7 @@
         .catch(error => {
             console.log(error);
         });
+        
     };
 
 </script>

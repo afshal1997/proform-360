@@ -39,6 +39,14 @@ class SettingController extends Controller
                 $image = single_image($request->file('logo'),request()->segment(2));
                 $record->logo = $image;
             }
+            if (!empty($request->file('footerlogo'))) {
+                $image_path = Settings::where('id',1)->first()->footerlogo;
+                if (File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+                $image = single_image($request->file('footerlogo'),request()->segment(2));
+                $record->footerlogo = $image;
+            }
             if (!empty($request->file('favico'))) {
                 $image_path = Settings::where('id',1)->first()->favico;
                 if (File::exists($image_path)) {

@@ -15,10 +15,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('admin/user/edit/'.Auth::user()->id)}}">
-                            {{auth()->user()->role_id===5?"Company Profile":"My Profile"}}</a>
-
+                            My Profile</a>
                         @if(in_array('updateSetting',\Request::get('permission')))
-                            <a class="dropdown-item" href="javascript:void(0)">Settings</a>
+                            <a class="dropdown-item" href="{{ route('setting') }}">Settings</a>
                         @endif
                         <a class="dropdown-item" href="javascript:void(0)"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i

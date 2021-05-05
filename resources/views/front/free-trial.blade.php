@@ -103,32 +103,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="contact-form">
                         <h3>Get In Touch</h3>
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-md-12 form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" class="form-control ">
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="text" id="phone" class="form-control ">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12 form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" class="form-control ">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="submit" value="Send Message"
-                                        class="btn btn-primary btn-get-a-quote px-3 py-2 mt-2">
-                                </div>
-                            </div>
-                        </form>
+                        @include('front.components.form')
                     </div>
 
                 </div>
@@ -157,7 +132,7 @@
             <div class="modal-body">
                 <div class="col-lg-12 col-sm-12 contact_form full_width_100" data-aos="fade-up">
                     <div class="inner_contact_row"> <br>
-                        <center><img class="logo  w-100" src="images/logo/footer-logo.png"> </center>
+                        <center><img class="logo  w-100" src="{{ asset($setting->footerlogo) }}"> </center>
 
                         <br>
                         <form action="#" method="post">
@@ -218,7 +193,7 @@
             <div class="modal-body">
                 <div class="col-lg-12 col-sm-12 contact_form full_width_100" data-aos="fade-up">
                     <div class="inner_contact_row"> <br>
-                        <center><img class="logo  w-100" src="images/logo/footer-logo.png"> </center>
+                        <center><img class="logo  w-100" src="{{ asset($setting->footerlogo) }}"> </center>
 
                         <br>
                         <form action="#" method="post">
@@ -280,7 +255,7 @@
             <div class="modal-body">
                 <div class="col-lg-12 col-sm-12 contact_form full_width_100" data-aos="fade-up">
                     <div class="inner_contact_row"> <br>
-                        <center><img class="logo  w-100" src="images/logo/footer-logo.png"> </center>
+                        <center><img class="logo  w-100" src="{{ asset($setting->footerlogo) }}"> </center>
 
                         <br>
                         <form action="#" method="post">

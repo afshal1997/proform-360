@@ -49,9 +49,8 @@
                                             <tr>
                                                 <th width="10"><input type="checkbox" id="select_all">All</th>
                                                 <th>ID</th>
-                                                <th>icon</th>
-                                                <th>heading</th>
-                                                <th>text</th>
+                                                <th>Icon</th>
+                                                <th>Heading</th>
                                                 <th>Action</th>
                                             </tr>
                                             </thead>
@@ -175,7 +174,6 @@
                     {data: 'id', name: 'id'},
                     {data: 'icon', name: 'icon'},
                     {data: 'heading', name: 'heading'},
-                    {data: 'text', name: 'text'},
                     {data: 'action', name: 'action', orderable: false}
                 ]
 

@@ -21,17 +21,17 @@ class SettingTableSeeder extends Seeder
             'email' => 'info@proform360.com',
             'phone' => '070-8860-4678',
             'whatsapp' => '021-411-3416',
-            'address' => 'Mon-Fri 08:00am - 6:00pm
-112W 34th St,',
+            'address' => '112W 34th St,',
             'weight_class' => 'Gram',
             'dimension_class' => 'Centimeter',
             'logo' => 'assets/uploads/setting/654736388.png',
+            'footerlogo' => 'assets/uploads/setting/footer-logo.png',
             'favico' => 'assets/uploads/setting/902576203.png',
             'facebook' => 'https://www.facebook.com',
             'instagram' => 'https://www.instagram.com',
-            'twitter' => 'https://www.instagram.com',
-            'pinterest' => 'https://www.instagram.com',
-            'linkedin' => 'https://www.instagram.com',
+            'twitter' => 'https://www.twitter.com',
+            'pinterest' => 'https://www.pinterest.com',
+            'linkedin' => 'https://www.linkedin.com',
             'created_by' => 1,
             'created_at' => $now
         ]);

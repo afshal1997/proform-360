@@ -30,6 +30,7 @@ class CreateSettingsTable extends Migration
             $table->string('weight_class')->nullable();
             $table->string('dimension_class')->nullable();
             $table->string('logo');
+            $table->string('footerlogo');
             $table->string('favico');
             $table->boolean('status')->default(true);
             $table->integer('created_by',false)->nullable();

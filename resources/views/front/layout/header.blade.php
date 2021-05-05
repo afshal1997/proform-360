@@ -22,14 +22,14 @@
                         <div class="float-right text-white list-style">
                             <ul>
                                 <li>
-                                     Open Hours: Mon-Fri 09:00-18:00
+                                    {!! $setting->headline ?? '' !!}
                                     <a href="{{ $setting->facebook }}">
                                         <i class="fa fa-facebook ml-2 mr-2"></i>
                                     </a>
-                                    <a href="javascript:void(0)">
+                                    <a href="{{ $setting->linkedin }}">
                                         <i class="fa fa-linkedin mr-2"></i>
                                     </a>
-                                    <a href="javascript:void(0)">
+                                    <a href="{{ $setting->pinterest }}">
                                         <i class="fa fa-pinterest-p mr-2"></i>
                                     </a>
                                     <a href="{{ $setting->twitter }}">
