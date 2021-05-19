@@ -123,22 +123,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item form-group">
-                                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="section_image">section_image <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div class="input-group-btn">
-                                            <div class="image-upload">
-                                                <img src="{{asset(!empty($record->section_image)?$record->section_image:'assets/admin/images/placeholder.png')}}" class="img-responsive">
-                                                <div class="file-btn">
-                                                    <input type="file" id="section_image" name="section_image" accept=".jpg,.png">
-                                                    <input type="text" id="section_image" name="section_image" value="{{ !empty($record->section_image) ? $record->section_image : '' }}" hidden="">
-                                                    <label class="btn btn-info">Upload</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--<div class="item form-group">-->
+                                <!--    <label class="col-form-label col-md-3 col-sm-3 label-align" for="section_image1">section_image <span class="required">*</span>-->
+                                <!--    </label>-->
+                                <!--    <div class="col-md-6 col-sm-6 col-xs-12">-->
+                                <!--        <div class="input-group-btn">-->
+                                <!--            <div class="image-upload">-->
+                                <!--                <img src="{{asset(!empty($record->section_image)?$record->section_image:'assets/admin/images/placeholder.png')}}" class="img-responsive">-->
+                                <!--                <div class="file-btn">-->
+                                <!--                    <input type="file" id="section_image" name="section_image" accept=".jpg,.png">-->
+                                <!--                    <input type="text" id="section_image" name="section_image" value="{{ !empty($record->section_image1) ? $record->section_image : '' }}" hidden="">-->
+                                <!--                    <label class="btn btn-info">Upload</label>-->
+                                <!--                </div>-->
+                                <!--            </div>-->
+                                <!--        </div>-->
+                                <!--    </div>-->
+                                <!--</div>-->
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
                                     <div class="col-md-6 offset-md-3">

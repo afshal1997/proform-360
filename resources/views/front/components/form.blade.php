@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 form-group">
+    <div class="col-md-6 form-group m-auto">
       <input type="submit" value="Send Message" class="btn btn-primary px-3 py-3">
     </div>
   </div>

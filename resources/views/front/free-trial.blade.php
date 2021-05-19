@@ -107,11 +107,10 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 mb-2">
-
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.152535962182!2d67.09666901550536!3d24.926873048730325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338ca16b45125%3A0xd52d961225465a4b!2sPlot%20D%208A%2C%20Block%206%20Gulshan-e-Iqbal%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1618386548625!5m2!1sen!2sus"
-                        width="100%" height="460" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="col-md-6 mb-2 map-location">
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.2729727987203!2d-122.75745318490583!3d45.484447540113905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950bf384bb611f%3A0xbac3331d781d0b5e!2sThe%20UPS%20Store!5e0!3m2!1sen!2s!4v1621280941664!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
                 </div>
 
             </div>

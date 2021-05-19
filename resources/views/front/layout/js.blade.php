@@ -16,6 +16,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script>
     $(window).scroll(function() {
         $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
@@ -63,4 +64,25 @@
         
     };
 
+</script>
+<script>
+   $(document).ready(function(){
+        $(".navbar-toggler").click(function(){
+        $(".show").toggle();
+    });
+    
+    $("#featuretoggle").click(function(){
+        $(".show").toggle();
+    });
+    
+	$('a[href^="#"]').on('click',function (e) {
+	    e.preventDefault();
+	    var target = this.hash;
+	    var $target = $(target);
+	    $('html, body').stop().animate({
+	        'scrollTop': $target.offset().top
+	    }, 2000, 'swing', function () {
+	    });
+	});
+});
 </script>

@@ -56,27 +56,20 @@
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="nav navbar-nav ml-0 mr-0 m-auto">
                         <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link">HOME</a></li>
-                        <li class="nav-item"><a href="{{ route('feature') }}"
-                                class="nav-link">FEATURES</a></li>
+                        <li class="nav-item"><a href="{{ (url('/') == url()->current())? '#feature' : url('/').'#feature' }}"
+                                class="nav-link" id="featuretoggle">FEATURES</a></li>
                         <li class="nav-item"><a href="{{ route('pricing') }}"
                                 class="nav-link">PRICING </a></li>
                         <li class="nav-item"><a href="{{ route('contact') }}"
                                 class="nav-link">CONTANT US</a></li>
                     </ul>
-
+                    <ul class="menu-right m-auto">
+                        <li>
+                            <a href="javascript:void(0)"><i class="fa fa-user mr-3"></i>Customer
+                                Login</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="float-right menu-right m-auto">
-                    <li>
-                        <a href="javascript:void(0)"><i class="fa fa-user  mr-lg-3 mr-sm-0 mt-sm-5 mt-lg-0"></i>Customer
-                            Login</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-search ml-3 mr-3 text-dark mt-sm-5 mt-lg-0"></i>
-                    </li>
-                    <li>
-                        <i class="fa fa-shopping-cart mr-3 text-dark mt-sm-5 mt-lg-0"></i>
-                    </li>
-                </ul>
             </div>
         </nav>
         <!-- END nav -->

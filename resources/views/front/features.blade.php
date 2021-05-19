@@ -3,18 +3,13 @@
 @section('content')
 
     <section class="features-bg">
-        <div class="center-div">
-            <h1>Features</h1>
-            <p>Social media tools that will grow your business</p>
-            <div aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Features</li>
-                </ol>
-            </div>
-        </div>
+        
     </section>
     <section class="feature-section">
+        <div class="center-div text-center">
+            <h1>Features</h1>
+            <p>Social media tools that will grow your business</p>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-3">

@@ -21,24 +21,26 @@
               <h2>Get In Touch</h2>
             @include('front.components.form')
           </div>
-          <div class="col-md-6 mb-5">
+          <div class="col-lg-6 mb-5">
+            <div class="map-location">
               <h2>Contact Information</h2>
-            <div class="row">
-              <div class="col-md-8  contact-form-contact-info">
-                <p>
-                  <i class="fa fa-map-marker mr-2" aria-hidden="true"></i>34 Street Name, City Name Here, United States
-                </p>
-      
-                <p>
-                  <i class="fa fa-phone mr-2"></i>
-                 503-746-3142
-                </p>
-      
-                <p>
-                  <i class="fa fa-envelope mr-2"></i> info@proform360.com
-                </p>
-              </div>
-              <iframe class="mr-2" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3618.1484460069382!2d67.09906145766993!3d24.927012405907472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338ca16b45125%3A0xd52d961225465a4b!2sPlot%20D%208A%2C%20Block%206%20Gulshan-e-Iqbal%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1618390615533!5m2!1sen!2sus" width="600" height="300" style="border:0;margin-left:16px;" allowfullscreen="" loading="lazy"></iframe>
+                <div class="row">
+                  <div class="col-md-8  contact-form-contact-info">
+                    <p>
+                      <i class="fa fa-map-marker mr-2" aria-hidden="true"></i>4931 SW 76th Avenue 129 Portland, OR 97225
+                    </p>
+          
+                    <p>
+                      <i class="fa fa-phone mr-2"></i>
+                        070-8860-4678
+                    </p>
+          
+                    <p>
+                      <i class="fa fa-envelope mr-2"></i> info@proform360.com
+                    </p>
+                  </div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.2729727987203!2d-122.75745318490583!3d45.484447540113905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950bf384bb611f%3A0xbac3331d781d0b5e!2sThe%20UPS%20Store!5e0!3m2!1sen!2s!4v1621280941664!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
           </div>
         </div>
